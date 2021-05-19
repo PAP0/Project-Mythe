@@ -6,6 +6,7 @@ public class ThirdPersonMovement : MonoBehaviour
 {
     public CharacterController controller;
     public Transform cam;
+    public Animator anim;
 
     public float speed;
 
@@ -14,6 +15,7 @@ public class ThirdPersonMovement : MonoBehaviour
     void Update()
     {
         Move();
+        MoveAnim();
     }
 
     void Move()
@@ -30,6 +32,18 @@ public class ThirdPersonMovement : MonoBehaviour
 
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
+        }
+    }
+
+    void MoveAnim()
+    {
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        {
+            anim.SetBool("isWalking", true);
+        }
+        if(Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
+        {
+            anim.SetBool("isWalking", false);
         }
     }
 }
