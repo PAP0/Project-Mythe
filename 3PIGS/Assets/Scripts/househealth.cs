@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class househealth : healthscript
 {
-
-    void OnTriggerEnter(Collider collision)
+    public GameObject house;
+    void OnTriggerStay(Collider collision)
     {
         if (collision.tag == "Wolf")
         {
+            Debug.Log("touching");
             if(Input.GetKeyDown(KeyCode.Space))
-            { 
-                takeDamage();
-                if (health <= 1)
-                {
-                    Debug.Log("house dedded");
-                }
+            {
+            takeDamage();
+            if (health <= 1)
+            {
+                Destroy(house);
+                Debug.Log("house dedded");
+            }
             }
         }
     }
