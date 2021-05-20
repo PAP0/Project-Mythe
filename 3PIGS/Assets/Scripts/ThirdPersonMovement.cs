@@ -16,6 +16,8 @@ public class ThirdPersonMovement : MonoBehaviour
     {
         Move();
         MoveAnim();
+        BlowAnim();
+        AttackAnim();
     }
 
     void Move()
@@ -44,6 +46,30 @@ public class ThirdPersonMovement : MonoBehaviour
         if(Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
         {
             anim.SetBool("isWalking", false);
+        }
+    }
+
+    void BlowAnim()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            anim.SetBool("isPuffing", true);
+        }
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            anim.SetBool("isPuffing", false);
+        }
+    }
+
+    void AttackAnim()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            anim.SetBool("isAttacking", true);
+        }
+        if (Input.GetKeyUp(KeyCode.Mouse0))
+        {
+            anim.SetBool("isAttacking", false);
         }
     }
 }
