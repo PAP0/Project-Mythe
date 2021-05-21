@@ -22,20 +22,16 @@ public class pighealth : healthscript
         if (collision.tag == "Wolf")
         {
             Debug.Log("touching");
-            if (Input.GetKeyDown(KeyCode.Mouse0))
-            {
-                takeDamage();
-                if (health <= 1)
-                {
-                    PlayerTransform.position = TeleportGoal.position;
-                    Debug.Log("pig dedded");
-                }
-            }
         }
     }
 
     void Update()
     {
+        if (health <= 0.9)
+        {
+            PlayerTransform.position = TeleportGoal.position;
+            Debug.Log("pig dedded");
+        }
     }
 
 
