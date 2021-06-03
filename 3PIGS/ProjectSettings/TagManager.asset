@@ -12,6 +12,13 @@ TagManager:
   - StrawBuild
   - WoodBuild
   - Inventory
+  - Terrain
+  - Stone
+  - StoneBuild
+  - StoneMine
+  - WoodMine
+  - Pig2
+  - Pig3
   layers:
   - Default
   - TransparentFX

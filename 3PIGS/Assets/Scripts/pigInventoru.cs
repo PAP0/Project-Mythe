@@ -6,7 +6,12 @@ public class pigInventoru : MonoBehaviour
 {
     public int AmountStraw;
     public int AmountWood;
+    public int AmountStone;
+    public int AddStraw;
+    public int AddWood;
+    public int AddStone;
     public int Amount;
+
 
     
 
@@ -21,7 +26,7 @@ public class pigInventoru : MonoBehaviour
         {
             Debug.Log("touching");
                 Destroy(GameObject.FindWithTag("Straw"));
-                AmountStraw = AmountStraw + 1;
+                AmountStraw = AmountStraw + AddStraw;
             Debug.Log(AmountStraw);
 
         }
@@ -29,8 +34,15 @@ public class pigInventoru : MonoBehaviour
         {
             Debug.Log("touching");
                 Destroy(GameObject.FindWithTag("Wood"));
-                AmountWood = AmountWood + 1;
+                AmountWood = AmountWood + AddWood;
                 Debug.Log(AmountWood);
+        }
+        if (collision.tag == "Stone")
+        {
+            Debug.Log("touching");
+            Destroy(GameObject.FindWithTag("Stone"));
+            AmountStone = AmountStone + AddStone;
+            Debug.Log(AmountStone);
         }
     }
 
@@ -46,6 +58,10 @@ public class pigInventoru : MonoBehaviour
     public void RemoveWood()
     {
         AmountWood = AmountWood - 1;
+    }
+    public void RemoveStone()
+    {
+        AmountStone = AmountStone - 1;
     }
 
 

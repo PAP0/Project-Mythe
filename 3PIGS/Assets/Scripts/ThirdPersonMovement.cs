@@ -9,15 +9,23 @@ public class ThirdPersonMovement : MonoBehaviour
     public Animator anim;
 
     public float speed;
+    //public float downforce;
+    //public Rigidbody rb;
 
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
+
     void Update()
     {
         Move();
         MoveAnim();
         BlowAnim();
         AttackAnim();
+        controller.Move(Physics.gravity * Time.deltaTime);
+    }
+
+    void FixedUpdate()
+    {
     }
 
     void Move()
