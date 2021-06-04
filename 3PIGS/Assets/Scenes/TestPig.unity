@@ -464,6 +464,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AmountStraw: 0
   AmountWood: 0
+  AmountStone: 0
+  AddStraw: 1
+  AddWood: 1
+  AddStone: 1
   Amount: 0
 --- !u!65 &87009993
 BoxCollider:
@@ -779,7 +783,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pigInventoru: {fileID: 87009992}
-  StrawHouse: {fileID: 386701529}
+  StrawHouse:
+  - {fileID: 386701529}
+  isdone: 0
   BuildStraw: 0
 --- !u!1001 &254622098
 PrefabInstance:
@@ -907,7 +913,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.344473, y: 1}
+    m_SensorSize: {x: 1.7783934, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2309,7 +2315,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.344473, y: 1}
+    m_SensorSize: {x: 1.7783934, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2325,7 +2331,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 945132686}
-  m_LocalRotation: {x: 0.01305051, y: 0.07884479, z: -0.0010322672, w: 0.99680096}
+  m_LocalRotation: {x: 0.013049561, y: 0.079780184, z: -0.0010445155, w: 0.9967265}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3021,7 +3027,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pigInventoru: {fileID: 87009992}
-  WoodHouse: {fileID: 998635351}
+  WoodHouse:
+  - {fileID: 998635351}
   BuildWood: 0
 --- !u!1 &1285026791
 GameObject:
@@ -3359,7 +3366,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.344473, y: 1}
+    m_SensorSize: {x: 1.7783934, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -4242,7 +4249,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.344473, y: 1}
+    m_SensorSize: {x: 1.7783934, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -4833,7 +4840,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2069270257}
-  m_LocalRotation: {x: 0.013050497, y: 0.0788448, z: -0.0010322665, w: 0.99680096}
+  m_LocalRotation: {x: 0.01304954, y: 0.079780184, z: -0.0010445147, w: 0.9967265}
   m_LocalPosition: {x: -1.3298745, y: 4.3600006, z: -9.078699}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []

@@ -6,7 +6,7 @@ public class HouseStrawScript : MonoBehaviour
 {
     public pigInventoru pigInventoru;
     public GameObject[] StrawHouse;
-    public bool isdone;
+    public bool isDone;
     public int BuildStraw;
 
     void OnTriggerStay(Collider collision)
@@ -63,6 +63,7 @@ public class HouseStrawScript : MonoBehaviour
         if (BuildStraw >= 9.5)
         {
             StrawHouse[9].SetActive(true);
+            isDone = true;
         }
     }
 }

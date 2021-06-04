@@ -7,6 +7,7 @@ public class HouseStoneScript : MonoBehaviour
     public pigInventoru pigInventoru;
     public GameObject[] StoneHouse;
     public int BuildStone;
+    public bool isDone;
 
     void OnTriggerStay(Collider collision)
     {
@@ -62,6 +63,7 @@ public class HouseStoneScript : MonoBehaviour
         if (BuildStone >= 9.5)
         {
             StoneHouse[9].SetActive(true);
+            isDone = true;
         }
     }
 }
