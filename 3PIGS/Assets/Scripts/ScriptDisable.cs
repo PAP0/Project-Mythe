@@ -8,11 +8,6 @@ public class ScriptDisable : MonoBehaviour
     public GameObject Pig2;
     public GameObject Pig3;
     public GameObject Wolf;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
