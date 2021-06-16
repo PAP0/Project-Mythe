@@ -15,7 +15,7 @@ public class pighealth : healthscript
 
     void Start()
     {
-        PlayerTransform = GameObject.Find("pig").transform;
+
     }
 
     void OnTriggerStay(Collider collision)

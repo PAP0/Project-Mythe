@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ThirdPersonMovement : MonoBehaviour
 {
     public CharacterController controller;
@@ -17,7 +18,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
     void Update()
     {
-        Move();
+        MoveTest();
         MoveAnim();
         BlowAnim();
         AttackAnim();
@@ -28,7 +29,7 @@ public class ThirdPersonMovement : MonoBehaviour
     {
     }
 
-    void Move()
+    public void MoveTest()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
@@ -37,6 +38,22 @@ public class ThirdPersonMovement : MonoBehaviour
         if(direction.magnitude >= 0.1f)
         {
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y ;
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+
+            Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+            controller.Move(moveDir.normalized * speed * Time.deltaTime);
+        }
+    }
+    public void MoveOld()
+    {
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
+        Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
+
+        if (direction.magnitude >= 0.1f)
+        {
+            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
@@ -59,11 +76,11 @@ public class ThirdPersonMovement : MonoBehaviour
 
     void BlowAnim()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetButton("Blow"))
         {
             anim.SetBool("isPuffing", true);
         }
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetButtonUp("Blow"))
         {
             anim.SetBool("isPuffing", false);
         }

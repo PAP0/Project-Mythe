@@ -10,7 +10,7 @@ public class househealth : healthscript
         if (collision.tag == "Wolf")
         {
             Debug.Log("touching");
-            if(Input.GetKey(KeyCode.Space))
+            if(Input.GetButton("Blow"))
             {
             takeDamage();
             if (health <= 1)
