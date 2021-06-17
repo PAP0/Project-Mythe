@@ -7,14 +7,19 @@ public class WinLose : MonoBehaviour
     public pighealth pighealth;
     public pighealth pighealth2;
     public pighealth pighealth3;
-    public HouseWoodScript wood;
-    public HouseStrawScript straw;
-    public HouseStoneScript stone;
+
+    //public HouseWoodScript wood;
+    //public HouseStrawScript straw;
+    //public HouseStoneScript stone;
 
     public GameObject WolfWin;
     public GameObject PigWin;
     public GameObject WolfLose;
     public GameObject PigLose;
+
+    [SerializeField]
+    private InsideCheck ICheck;
+
 
     void Update()
     {
@@ -25,7 +30,7 @@ public class WinLose : MonoBehaviour
             WolfWin.SetActive(true);
             Debug.Log("Wolf Win");
         }
-        if(wood.isDone == true && straw.isDone == true && stone.isDone == true)
+        if(ICheck.PigWin == true)
         {
             PigWin.SetActive(true);
             WolfLose.SetActive(true);

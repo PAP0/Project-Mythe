@@ -22,7 +22,7 @@ public class pigrescue : MonoBehaviour
     {
         if (collision.tag == "Pig" || collision.tag == "Pig2" || collision.tag == "Pig3")
         {
-            Debug.Log("touching");
+
             if (Input.GetButtonDown("P2Rescue") || Input.GetButtonDown("P3Rescue") || Input.GetButtonDown("P4Rescue"))
             {
                 PlayerTransform.position = TeleportGoal.position;

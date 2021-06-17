@@ -7,6 +7,7 @@ public class HouseStoneScript : MonoBehaviour
     public pigInventoru pigInventoru1;
     public pigInventoru pigInventoru2;
     public pigInventoru pigInventoru3;
+    public Househealthstone stonehealth;
     public GameObject[] StoneHouse;
     public int BuildStone;
     public bool isDone;
@@ -18,7 +19,6 @@ public class HouseStoneScript : MonoBehaviour
     {
         if (collision.tag == "Inventory")
         {
-            Debug.Log("touching");
             if (canBuild1 == true)
             {
                 if (Input.GetButtonDown("P2Build"))

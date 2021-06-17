@@ -19,6 +19,7 @@ TagManager:
   - WoodMine
   - Pig2
   - Pig3
+  - Inside
   layers:
   - Default
   - TransparentFX

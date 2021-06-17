@@ -14,6 +14,10 @@ public class InsideCheck : MonoBehaviour
     [SerializeField]
     private HouseStoneScript HouseStone;
 
+    public t1 t1s;
+    public t2 t2s;
+    public t3 t3s;
+
     public bool PigWin;
 
     void Update()
@@ -26,32 +30,34 @@ public class InsideCheck : MonoBehaviour
         {
             if (P1Health.isDead == false && P2Health.isDead == false && P3Health.isDead == false)
             {
-                if (collision.tag == "Pig" && collision.tag == "Pig2" && collision.tag == "Pig3")
+                if (t1s.t1b == true && t2s.t2b == true && t3s.t3b == true)
                 {
                     PigWin = true;
                 }
             }
             if (P1Health.isDead == false && P2Health.isDead == false && P3Health.isDead == true)
             {
-                if (collision.tag == "Pig" && collision.tag == "Pig2")
+                if (t1s.t1b == true && t2s.t2b == true)
                 {
                     PigWin = true;
                 }
             }
             if (P1Health.isDead == false && P2Health.isDead == true && P3Health.isDead == false)
             {
-                if (collision.tag == "Pig" && collision.tag == "Pig3")
+                if (t1s.t1b == true && t3s.t3b == true)
                 {
                     PigWin = true;
                 }
             }
-            if (P1Health.isDead == true && P2Health.isDead == false && P3Health.isDead == false)
             {
-                if (collision.tag == "Pig2" && collision.tag == "Pig3")
+            if (P1Health.isDead == true)
+                { 
+                if (t2s.t2b == true && t3s.t3b == true)
                 {
                     PigWin = true;
                 }
             }
+                }
             if (P1Health.isDead == false && P2Health.isDead == true && P3Health.isDead == true)
             {
                 if (collision.tag == "Pig")
@@ -59,7 +65,7 @@ public class InsideCheck : MonoBehaviour
                     PigWin = true;
                 }
             }
-            if (P1Health.isDead == true && P2Health.isDead == false && P3Health.isDead == true)
+            if (P1Health.isDead == true && P2Health.isDead == true && P3Health.isDead == true )
             {
                 if (collision.tag == "Pig2")
                 {
@@ -75,11 +81,7 @@ public class InsideCheck : MonoBehaviour
             }
         }
         #endregion
-        //if (collision.tag == "Pig")
     }
 
-    public void Check()
-    {
-
-    }
+    
 }

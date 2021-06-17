@@ -7,6 +7,7 @@ public class HouseStrawScript : MonoBehaviour
     public pigInventoru pigInventoru1;
     public pigInventoru pigInventoru2;
     public pigInventoru pigInventoru3;
+    public househealthstraw strawhealth;
     public GameObject[] StrawHouse;
     public bool isDone;
     public int BuildStraw;

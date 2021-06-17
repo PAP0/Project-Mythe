@@ -7,6 +7,7 @@ public class HouseWoodScript : MonoBehaviour
     public pigInventoru pigInventoru1;
     public pigInventoru pigInventoru2;
     public pigInventoru pigInventoru3;
+    public Househealthwood woodhealth;
     public GameObject[] WoodHouse;
     public int BuildWood;
     public bool isDone;
