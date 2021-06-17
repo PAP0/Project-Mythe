@@ -19,8 +19,6 @@ public class P3Movement : MonoBehaviour
     {
         Move();
         MoveAnim();
-        BlowAnim();
-        AttackAnim();
         controller.Move(Physics.gravity * Time.deltaTime);
     }
 
@@ -45,13 +43,18 @@ public class P3Movement : MonoBehaviour
         }
     }
 
+    void kaas()
+    {
+
+    }
+
     void MoveAnim()
     {
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        if (Input.GetAxisRaw("Horizontal4") > 0f || Input.GetAxisRaw("Vertical4") > 0f || Input.GetAxisRaw("Horizontal4") < 0f || Input.GetAxisRaw("Vertical4") < 0f)
         {
             anim.SetBool("isWalking", true);
         }
-        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
+        else
         {
             anim.SetBool("isWalking", false);
         }

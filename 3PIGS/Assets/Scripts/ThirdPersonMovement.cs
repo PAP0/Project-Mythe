@@ -48,11 +48,11 @@ public class ThirdPersonMovement : MonoBehaviour
 
     void MoveAnim()
     {
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        if (Input.GetAxisRaw("Horizontal1") > 0f || Input.GetAxisRaw("Vertical1") > 0f || Input.GetAxisRaw("Horizontal1") < 0f || Input.GetAxisRaw("Vertical1") < 0f)
         {
             anim.SetBool("isWalking", true);
         }
-        if(Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
+        else
         {
             anim.SetBool("isWalking", false);
         }
@@ -72,11 +72,11 @@ public class ThirdPersonMovement : MonoBehaviour
 
     void AttackAnim()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetButtonDown("Attack"))
         {
             anim.SetBool("isAttacking", true);
         }
-        if (Input.GetKeyUp(KeyCode.Mouse0))
+        if (Input.GetButtonUp("Attack"))
         {
             anim.SetBool("isAttacking", false);
         }

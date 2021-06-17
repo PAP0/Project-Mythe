@@ -18,6 +18,7 @@ public class WinLose : MonoBehaviour
 
     void Update()
     {
+
         if(pighealth.isDead == true && pighealth2.isDead == true && pighealth3.isDead == true)
         {
             PigLose.SetActive(true);

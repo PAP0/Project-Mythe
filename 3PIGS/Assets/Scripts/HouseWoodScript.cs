@@ -4,26 +4,75 @@ using UnityEngine;
 
 public class HouseWoodScript : MonoBehaviour
 {
-    public pigInventoru pigInventoru;
+    public pigInventoru pigInventoru1;
+    public pigInventoru pigInventoru2;
+    public pigInventoru pigInventoru3;
     public GameObject[] WoodHouse;
     public int BuildWood;
     public bool isDone;
+    public bool canBuild1;
+    public bool canBuild2;
+    public bool canBuild3;
 
     void OnTriggerStay(Collider collision)
     {
         if (collision.tag == "Inventory")
         {
             Debug.Log("touching");
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (canBuild1 == true)
             {
-                pigInventoru.RemoveWood();
-                BuildWood = BuildWood + 1;
+                if (Input.GetButtonDown("P2Build"))
+                {
+                    pigInventoru1.RemoveWood();
+                    BuildWood = BuildWood + 1;
+                }
+            }
+            if (canBuild2 == true)
+            {
+                if (Input.GetButtonDown("P3Build"))
+                {
+                    pigInventoru2.RemoveWood();
+                    BuildWood = BuildWood + 1;
+                }
+            }
+            if (canBuild3 == true)
+            {
+                if (Input.GetButtonDown("P4Build"))
+                {
+                    pigInventoru1.RemoveWood();
+                    BuildWood = BuildWood + 1;
+                }
             }
         }
     }
 
     void Update()
     {
+        if (pigInventoru1.AmountWood > 0)
+        {
+            canBuild1 = true;
+        }
+        if (pigInventoru1.AmountWood < 1)
+        {
+            canBuild1 = false;
+        }
+        if (pigInventoru2.AmountWood > 0)
+        {
+            canBuild2 = true;
+        }
+        if (pigInventoru2.AmountWood < 1)
+        {
+            canBuild2 = false;
+        }
+        if (pigInventoru3.AmountWood > 0)
+        {
+            canBuild3 = true;
+        }
+        if (pigInventoru3.AmountWood < 1)
+        {
+            canBuild3 = false;
+        }
+        #region Buildparts
         if (BuildWood >= 1)
         {
             WoodHouse[0].SetActive(true);
@@ -65,5 +114,6 @@ public class HouseWoodScript : MonoBehaviour
             WoodHouse[9].SetActive(true);
             isDone = true;
         }
+        #endregion
     }
 }

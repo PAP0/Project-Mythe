@@ -23,7 +23,7 @@ public class WolfScript : MonoBehaviour
         if (collision.tag == "Pig")
         {
             Debug.Log("touching");
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetButtonDown("Attack"))
             {
                 pighealth.takeDamage();
             }
@@ -31,7 +31,7 @@ public class WolfScript : MonoBehaviour
         if (collision.tag == "Pig2")
         {
             Debug.Log("touching");
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetButtonDown("Attack"))
             {
                 pighealth2.takeDamage();
             }
@@ -39,7 +39,7 @@ public class WolfScript : MonoBehaviour
         if (collision.tag == "Pig3")
         {
             Debug.Log("touching");
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetButtonDown("Attack"))
             {
                 pighealth3.takeDamage();
             }

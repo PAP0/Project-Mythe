@@ -7,6 +7,7 @@ public class pigrescue : MonoBehaviour
     public Transform PlayerTransform;
 
     public Transform TeleportGoal;
+    public pighealth pighealth;
 
     public GameObject pig;
 
@@ -19,12 +20,13 @@ public class pigrescue : MonoBehaviour
 
     void OnTriggerStay(Collider collision)
     {
-        if (collision.tag == "Pig")
+        if (collision.tag == "Pig" || collision.tag == "Pig2" || collision.tag == "Pig3")
         {
             Debug.Log("touching");
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetButtonDown("P2Rescue") || Input.GetButtonDown("P3Rescue") || Input.GetButtonDown("P4Rescue"))
             {
                 PlayerTransform.position = TeleportGoal.position;
+                pighealth.health = 30;
                 Debug.Log("pig rescued");
             }
         }

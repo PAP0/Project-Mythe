@@ -4,27 +4,77 @@ using UnityEngine;
 
 public class HouseStrawScript : MonoBehaviour
 {
-    public pigInventoru pigInventoru;
+    public pigInventoru pigInventoru1;
+    public pigInventoru pigInventoru2;
+    public pigInventoru pigInventoru3;
     public GameObject[] StrawHouse;
     public bool isDone;
     public int BuildStraw;
+    public bool canBuild1;
+    public bool canBuild2;
+    public bool canBuild3;
 
     void OnTriggerStay(Collider collision)
     {
         if (collision.tag == "Inventory")
         {
             Debug.Log("touching");
-            if(Input.GetKeyDown(KeyCode.Q))
+            if(canBuild1 == true)
             {
-                pigInventoru.RemoveStraw();
-                BuildStraw = BuildStraw + 1;
+                if(Input.GetButtonDown("P2Build"))
+                {
+                    pigInventoru1.RemoveStraw();
+                    BuildStraw = BuildStraw + 1;
+                }
+            }
+            if (canBuild2 == true)
+            { 
+                if (Input.GetButtonDown("P3Build"))
+                {
+                    pigInventoru2.RemoveStraw();
+                    BuildStraw = BuildStraw + 1;
+                }
+            }
+
+            if (canBuild3 == true)
+            {
+                if (Input.GetButtonDown("P4Build"))
+                {
+                    pigInventoru3.RemoveStraw();
+                    BuildStraw = BuildStraw + 1;
+                }
             }
         }
     }
 
     void Update()
     {
-        if(BuildStraw >= 1)
+        if(pigInventoru1.AmountStraw > 0)
+        {
+            canBuild1 = true;
+        }
+        if (pigInventoru1.AmountStraw < 1)
+        {
+            canBuild1 = false;
+        }
+        if (pigInventoru2.AmountStraw > 0)
+        {
+            canBuild2 = true;
+        }
+        if (pigInventoru2.AmountStraw < 1)
+        {
+            canBuild2 = false;
+        }
+        if (pigInventoru3.AmountStraw > 0)
+        {
+            canBuild3 = true;
+        }
+        if (pigInventoru3.AmountStraw < 1)
+        {
+            canBuild3 = false;
+        }
+        #region BuildParts
+        if (BuildStraw >= 1)
         {
             StrawHouse[0].SetActive(true);
         }
@@ -65,5 +115,6 @@ public class HouseStrawScript : MonoBehaviour
             StrawHouse[9].SetActive(true);
             isDone = true;
         }
+        #endregion
     }
 }

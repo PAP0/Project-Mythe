@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class pigInventoru : MonoBehaviour
 {
+    [Range(0,99999)]
     public int AmountStraw;
+    [Range(0, 99999)]
     public int AmountWood;
+    [Range(0, 99999)]
     public int AmountStone;
     public int AddStraw;
     public int AddWood;
@@ -16,8 +19,20 @@ public class pigInventoru : MonoBehaviour
     
 
     // Use this for initialization
-    void Start()
+    void Update()
     {
+        if(AmountStraw < 0)
+        {
+            AmountStraw = 0;
+        }
+        if (AmountWood < 0)
+        {
+            AmountWood = 0;
+        }
+        if (AmountStone < 0)
+        {
+            AmountStone = 0;
+        }
     }
 
     void OnTriggerStay(Collider collision)
