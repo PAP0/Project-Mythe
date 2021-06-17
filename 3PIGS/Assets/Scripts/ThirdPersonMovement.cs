@@ -8,6 +8,8 @@ public class ThirdPersonMovement : MonoBehaviour
     public CharacterController controller;
     public Transform cam;
     public Animator anim;
+    public string HorizontalMap;
+    public string VerticalMap;
 
     public float speed;
     //public float downforce;
