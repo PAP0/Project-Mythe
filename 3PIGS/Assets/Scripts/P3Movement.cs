@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class ThirdPersonMovement : MonoBehaviour
+public class P3Movement : MonoBehaviour
 {
     public CharacterController controller;
     public Transform cam;
@@ -31,13 +30,13 @@ public class ThirdPersonMovement : MonoBehaviour
 
     public void Move()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal1");
-        float vertical = Input.GetAxisRaw("Vertical1");
+        float horizontal = Input.GetAxisRaw("Horizontal4");
+        float vertical = Input.GetAxisRaw("Vertical4");
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
 
-        if(direction.magnitude >= 0.1f)
+        if (direction.magnitude >= 0.1f)
         {
-            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y ;
+            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
@@ -52,7 +51,7 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             anim.SetBool("isWalking", true);
         }
-        if(Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
+        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
         {
             anim.SetBool("isWalking", false);
         }

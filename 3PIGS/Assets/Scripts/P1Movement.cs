@@ -30,8 +30,8 @@ public class P1Movement : MonoBehaviour
 
     public void Move()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal1");
-        float vertical = Input.GetAxisRaw("Vertical1");
+        float horizontal = Input.GetAxisRaw("Horizontal2");
+        float vertical = Input.GetAxisRaw("Vertical2");
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
 
         if (direction.magnitude >= 0.1f)
