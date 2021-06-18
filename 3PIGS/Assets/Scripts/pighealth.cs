@@ -30,9 +30,12 @@ public class pighealth : healthscript
     {
         if (health <= 0.9)
         {
-            //PlayerTransform.position = TeleportGoal.position;
             isDead = true;
             Debug.Log("pig dedded");
+            if(isDead == true)
+            {
+                //PlayerTransform.position = TeleportGoal.position;
+            }
         }
     }
 
