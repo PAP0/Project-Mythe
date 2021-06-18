@@ -34,6 +34,7 @@ public class pighealth : healthscript
             Debug.Log("pig dedded");
             if(isDead == true)
             {
+                Destroy(pig);
                 //PlayerTransform.position = TeleportGoal.position;
             }
         }
