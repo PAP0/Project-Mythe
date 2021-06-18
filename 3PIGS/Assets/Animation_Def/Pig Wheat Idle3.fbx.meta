@@ -1,17 +1,17 @@
 fileFormatVersion: 2
-guid: 1fb2471b3f2849f45bd314d8a8c79ab9
+guid: 869dfdf3579bad5478a0ab12c1954b6c
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable:
   - first:
       74: 1827226128182048838
-    second: Walk
+    second: Idle3
   externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
     materialSearch: 1
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -35,11 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Walk
+      name: Idle3
       takeName: Take 001
       internalID: 0
-      firstFrame: 71
-      lastFrame: 100
+      firstFrame: 196
+      lastFrame: 291
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -117,7 +117,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 100
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
