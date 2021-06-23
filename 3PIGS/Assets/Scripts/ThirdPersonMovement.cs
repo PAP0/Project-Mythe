@@ -48,7 +48,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
     void MoveAnim()
     {
-        if (Input.GetAxisRaw("Horizontal1") > 0f || Input.GetAxisRaw("Vertical1") > 0f || Input.GetAxisRaw("Horizontal1") < 0f || Input.GetAxisRaw("Vertical1") < 0f)//|| Input.GetKey(KeyCode.W))
+        if (Input.GetAxisRaw("Horizontal1") > 0f || Input.GetAxisRaw("Vertical1") > 0f || Input.GetAxisRaw("Horizontal1") < 0f || Input.GetAxisRaw("Vertical1") < 0f  || Input.GetKey(KeyCode.W))
         {
             anim.SetBool("isWalking", true);
         }
@@ -60,7 +60,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
     void BlowAnim()
     {
-        if (Input.GetButton("Blow"))// || Input.GetKey(KeyCode.Space))
+        if (Input.GetButton("Blow") || Input.GetKey(KeyCode.Space))
         {
             anim.SetBool("isPuffing", true);
         }
@@ -72,7 +72,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
     void AttackAnim()
     {
-        if (Input.GetButtonDown("Attack") )//|| Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetButtonDown("Attack") || Input.GetKey(KeyCode.Mouse0))
         {
             anim.SetBool("isAttacking", true);
         }
