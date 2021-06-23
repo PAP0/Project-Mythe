@@ -45,7 +45,7 @@ public class P1Movement : MonoBehaviour
 
     void MoveAnim()
     {
-        if (Input.GetAxisRaw("Horizontal2") > 0f || Input.GetAxisRaw("Vertical2") > 0f || Input.GetAxisRaw("Horizontal2") < 0f || Input.GetAxisRaw("Vertical2") < 0f)
+        if (Input.GetAxisRaw("Horizontal2") > 0f || Input.GetAxisRaw("Vertical2") > 0f || Input.GetAxisRaw("Horizontal2") < 0f || Input.GetAxisRaw("Vertical2") < 0f || Input.GetKey(KeyCode.W))
         {
             anim.SetBool("isWalking", true);
         }

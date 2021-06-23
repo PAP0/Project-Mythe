@@ -45,7 +45,7 @@ public class P2Movement : MonoBehaviour
 
     void MoveAnim()
     {
-        if (Input.GetAxisRaw("Horizontal3") > 0f || Input.GetAxisRaw("Vertical3") > 0f || Input.GetAxisRaw("Horizontal3") < 0f || Input.GetAxisRaw("Vertical3") < 0f)
+        if (Input.GetAxisRaw("Horizontal3") > 0f || Input.GetAxisRaw("Vertical3") > 0f || Input.GetAxisRaw("Horizontal3") < 0f || Input.GetAxisRaw("Vertical3") < 0f || Input.GetKey(KeyCode.W))
         {
             anim.SetBool("isWalking", true);
         }
