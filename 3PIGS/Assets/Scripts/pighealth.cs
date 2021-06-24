@@ -11,8 +11,6 @@ public class pighealth : healthscript
 
     public GameObject pig;
 
-    //-------------------------------
-
     void Start()
     {
 
