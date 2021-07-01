@@ -16,7 +16,7 @@ public class healthscript : MonoBehaviour
     {
         if (health <= 1)
         {
-            Debug.Log("dedded");
+            Debug.Log("dead");
         }
     }
 

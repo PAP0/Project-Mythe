@@ -8,20 +8,12 @@ public class WinLose : MonoBehaviour
     public pighealth pighealth2;
     public pighealth pighealth3;
 
-    //public PigCheck pcheck;
-
     public bool p1d;
     public bool p2d;
     public bool p3d;
 
-    //public HouseWoodScript wood;
-    //public HouseStrawScript straw;
-    //public HouseStoneScript stone;
-
     public GameObject WolfWin;
     public GameObject PigWin;
-    public GameObject WolfLose;
-    public GameObject PigLose;
 
     [SerializeField]
     private InsideCheck ICheck;
@@ -31,6 +23,8 @@ public class WinLose : MonoBehaviour
         p1d = false;
         p2d = false;
         p3d = false;
+        WolfWin.SetActive(false);
+        PigWin.SetActive(false);
     }
 
     void Update()
@@ -47,17 +41,13 @@ public class WinLose : MonoBehaviour
         {
             p3d = true;
         }
-        if (p1d == true && p2d == true && p3d == true)//pighealth.isDead == true && pighealth2.isDead == true && pighealth3.isDead == true)
+        if (p1d == true && p2d == true && p3d == true)
         {
-            PigLose.SetActive(true);
             WolfWin.SetActive(true);
-            Debug.Log("Wolf Win");
         }
         if(ICheck.PigWin == true)
         {
             PigWin.SetActive(true);
-            WolfLose.SetActive(true);
-            Debug.Log("Pig Win");
         }
     }
 }
