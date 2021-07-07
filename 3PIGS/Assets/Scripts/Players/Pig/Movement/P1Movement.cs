@@ -15,6 +15,8 @@ public class P1Movement : MonoBehaviour
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
 
+    public AudioSource WalkSound;
+
     void Update()
     {
         Move();
