@@ -28,7 +28,7 @@ public class MineStone : MonoBehaviour
         if (collision.tag == "Pig")
         {
             Debug.Log("touching");
-            if (Input.GetButtonDown("P2Mine") || Input.GetButtonDown("P3Mine") || Input.GetButtonDown("P4Mine"))
+            if (Input.GetButtonDown("P2Mine"))
             {
                 mining = mining + 1;
             }
